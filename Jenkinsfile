@@ -16,7 +16,13 @@ pipeline {
         } 
        stage('push'){
             steps{
-               echo 'push'
+               withCredentials([UsernamePassword(credentialsId: 'sunil',usernameVariable: 'USER', passwordVariable: 'PASSWORD')]) {
+
+         sh """
+    docker login --username $USER -- password $PASSWORD
+    docker push mygo 
+        """
+		      }
 	     }
           }		   
               
