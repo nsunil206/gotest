@@ -1,4 +1,4 @@
-OM golang:latest
+FROM golang:latest
 ADD main /
 WORKDIR /
 CMD /main
