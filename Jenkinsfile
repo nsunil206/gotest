@@ -7,16 +7,17 @@ pipeline {
 		       export PATH=$PATH:/goroot/bin:/gopath/bin
 		       go build main.go """ 
                   }
-                       }
+        }
 	
-		     stage('Docker Build'){
-                step{
+       stage('Docker Build'){
+             steps{
                    sh  """ docker build	-t gotest . """
                }
-                    }
-   
-         stage('push'){
+        } 
+       stage('push'){
+            steps{
                echo 'push'
+	     }
           }		   
               
           }
