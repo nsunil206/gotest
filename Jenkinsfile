@@ -11,7 +11,7 @@ pipeline {
 	
        stage('Docker Build'){
              steps{
-                   sh  """ docker build	-t gotest . """
+                   sh  """ docker build	-t nsunil206/gotest . """
                }
         } 
        stage('push'){
@@ -20,7 +20,7 @@ pipeline {
 
          sh """
     docker login --username $USER -- password $PASSWORD
-    docker push mygo 
+    docker push nsunil206/gotest 
         """
 		      }
 	     }
