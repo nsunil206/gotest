@@ -6,16 +6,17 @@ pipeline {
                 sh  """ go build main.go""" 
                   }
                        }
-		stages {
-		     stage('Docker Build')
+	
+		     stage('Docker Build'){
                 step{
                    sh  """ docker build	-t gotest . """
                }
                     }
-   stages {
-         stage('push')
-           echo 'push'
+   
+         stage('push'){
+               echo 'push'
           }		   
               
           }
       }
+	  
