@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh  """ go build main.go""" 
+                sh  """ 
+		       export PATH=$PATH:/goroot/bin:/gopath/bin
+		       go build main.go """ 
                   }
                        }
 	
